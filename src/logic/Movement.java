@@ -6,6 +6,7 @@ public class Movement {
 	int lineDele;
 	
 	
+
 	//check if line is complete
 	boolean CompleteLine(int i) {
 		boolean complete = true;

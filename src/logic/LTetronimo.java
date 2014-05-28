@@ -1,37 +1,39 @@
 package logic;
 
 public class LTetronimo extends Block {
-	LTetronimo(int x, int y) {
-		super(x, y);
-	
-	}
+	int rotation = 0;
+	static int[][] Ltetronimo = new int[][] { { 0, 3, 0, 0 }, { 0, 3, 0, 0 },
+			{ 0, 3, 3, 0 }, };
 
-	int rotation;
-	int[][] Itetronimo = new int[3][4];
+	LTetronimo(int x, int y) {
+		super(x, y, Ltetronimo);
+
+	}
 
 	public void rotate(int rotation) {
 		this.rotation = rotation;
+		howItIs();
 	}
 
 	public void howItIs() {
 		switch (rotation) {
 		case (0):
-			Itetronimo = new int[][] {
+			Ltetronimo = new int[][] {
 
 			{ 0, 3, 0, 0 }, { 0, 3, 0, 0 }, { 0, 3, 3, 0 }, };
 			break;
 		case (1):
-			Itetronimo = new int[][] {
+			Ltetronimo = new int[][] {
 
 			{ 0, 0, 0, 0 }, { 0, 0, 3, 0 }, { 3, 3, 3, 0 }, };
 			break;
 		case (2):
-			Itetronimo = new int[][] {
+			Ltetronimo = new int[][] {
 
 			{ 0, 3, 3, 0 }, { 0, 0, 3, 0 }, { 0, 0, 3, 0 }, };
 			break;
 		case (3):
-			Itetronimo = new int[][] {
+			Ltetronimo = new int[][] {
 
 			{ 0, 3, 3, 3 }, { 0, 3, 0, 0 }, { 0, 0, 0, 0 }, };
 

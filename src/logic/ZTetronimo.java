@@ -1,37 +1,38 @@
 package logic;
 
 public class ZTetronimo extends Block {
-	ZTetronimo(int x, int y) {
-		super(x, y);
-		
-	}
+	int rotation = 0;
+	static int[][] Ztetronimo = new int[][] { { 0, 0, 0 }, { 0, 6, 0 },
+			{ 6, 6, 6 }, };
 
-	int rotation;
-	int[][] Itetronimo = new int[3][3];
+	ZTetronimo(int x, int y) {
+		super(x, y, Ztetronimo);
+	}
 
 	public void rotate(int rotation) {
 		this.rotation = rotation;
+		howItIs();
 	}
 
 	public void howItIs() {
 		switch (rotation) {
 		case (0):
-			Itetronimo = new int[][] {
+			Ztetronimo = new int[][] {
 
 			{ 0, 0, 0 }, { 7, 7, 0 }, { 0, 7, 7 }, };
 			break;
 		case (1):
-			Itetronimo = new int[][] {
+			Ztetronimo = new int[][] {
 
 			{ 0, 7, 0 }, { 7, 7, 0 }, { 7, 0, 0 }, };
 			break;
 		case (2):
-			Itetronimo = new int[][] {
+			Ztetronimo = new int[][] {
 
 			{ 0, 0, 0 }, { 7, 7, 0 }, { 0, 7, 7 }, };
 			break;
 		case (3):
-			Itetronimo = new int[][] {
+			Ztetronimo = new int[][] {
 
 			{ 0, 7, 0 }, { 7, 7, 0 }, { 7, 0, 0 }, };
 			break;

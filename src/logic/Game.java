@@ -14,19 +14,6 @@ public class Game {
 
 		for (int i = 2; i < numberLin; i++) {
 			for (int j = 0; j < numberCol; j++) {
-				if(i == currentBlock.getX() && j == currentBlock.getY()) {
-				for(int k = currentBlock.getITetronimo().size(); k <  ){
-					for (int l =
-					
-					
-				}
-					
-					
-					
-					
-					
-					
-				}
 				if (actualGame[i][j] == 0)
 					System.out.print("  ");
 				else
@@ -34,10 +21,10 @@ public class Game {
 			}
 			System.out.println();
 		}
-
+		
 	}
 
-	void RandomBlock() {
+	static void RandomBlock() {
 		Random randomBlock = new Random();
 		int next = randomBlock.nextInt(7);
 		switch (next) {
@@ -45,28 +32,28 @@ public class Game {
 			currentBlock = new ITetronimo(2, 2);
 			break;
 		case 1:
-			currentBlock = new JTetronimo(2, 2);
+			currentBlock = new JTetronimo(4, 4);
 			break;
 		case 2:
-			currentBlock = new LTetronimo(2, 2);
+			currentBlock = new LTetronimo(4, 4);
 			break;
 		case 3:
-			currentBlock = new OTetronimo(2, 2);
+			currentBlock = new OTetronimo(4, 4);
 			break;
 		case 4:
-			currentBlock = new STetronimo(2, 2);
+			currentBlock = new STetronimo(4, 4);
 			break;
 		case 5:
-			currentBlock = new TTetronimo(2, 2);
+			currentBlock = new TTetronimo(4, 4);
 			break;
 		case 6:
-			currentBlock = new ZTetronimo(2, 2);
+			currentBlock = new ZTetronimo(4, 4);
 			break;
 		}
 	}
 
 	public static void main(String[] args) {
-
+		RandomBlock();
 		printBoard();
 	}
 

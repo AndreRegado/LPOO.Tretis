@@ -2,7 +2,7 @@ package logic;
 
 public class Board {
 
-	static int[][] actualGame;
+	int[][] actualGame;
 			
 	Board(){
 		actualGame = new int[][] {

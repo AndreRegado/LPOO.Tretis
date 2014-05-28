@@ -1,37 +1,38 @@
 package logic;
 
 public class STetronimo extends Block {
+	int rotation = 0;
+	static int[][] Stetronimo = new int[][] { { 0, 0, 0 }, { 0, 5, 5 },
+			{ 5, 5, 0 }, };
 
 	STetronimo(int x, int y) {
-		super(x, y);		// TODO Auto-generated constructor stub
+		super(x, y, Stetronimo);
 	}
-
-	int rotation;
-	int[][] Itetronimo = new int[3][3];
 
 	public void rotate(int rotation) {
 		this.rotation = rotation;
+		howItIs();
 	}
 
 	public void howItIs() {
 		switch (rotation) {
 		case (0):
-			Itetronimo = new int[][] {
+			Stetronimo = new int[][] {
 
 			{ 0, 0, 0 }, { 0, 5, 5 }, { 5, 5, 0 }, };
 			break;
 		case (1):
-			Itetronimo = new int[][] {
+			Stetronimo = new int[][] {
 
 			{ 0, 5, 0 }, { 0, 5, 5 }, { 0, 0, 5 }, };
 			break;
 		case (2):
-			Itetronimo = new int[][] {
+			Stetronimo = new int[][] {
 
 			{ 0, 0, 0 }, { 0, 5, 5 }, { 5, 5, 0 }, };
 			break;
 		case (3):
-			Itetronimo = new int[][] {
+			Stetronimo = new int[][] {
 
 			{ 0, 5, 0 }, { 0, 5, 5 }, { 0, 0, 5 }, };
 			break;

@@ -3,7 +3,8 @@ package logic;
 public class ITetronimo extends Block {
 	
 	int rotation = 0;
-	static int[][] Itetronimo = new int[4][4];
+	static int[][] Itetronimo = new int[][] { { 0, 1, 0, 0 }, { 0, 1, 0, 0 },
+		{ 0, 1, 0, 0 }, { 0, 1, 0, 0 }, };
 
 	ITetronimo(int x, int y) {
 		super(x, y, Itetronimo);
