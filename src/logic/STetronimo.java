@@ -1,6 +1,10 @@
 package logic;
 
-public class STetronimo {
+public class STetronimo extends Block {
+
+	STetronimo(int x, int y) {
+		super(x, y);		// TODO Auto-generated constructor stub
+	}
 
 	int rotation;
 	int[][] Itetronimo = new int[3][3];

@@ -1,14 +1,20 @@
 package logic;
 
-public class ITetromino {
+public class ITetronimo extends Block {
+	
+	int rotation = 0;
+	static int[][] Itetronimo = new int[4][4];
 
-	int rotation;
-	int[][] Itetronimo = new int[4][4];
-
+	ITetronimo(int x, int y) {
+		super(x, y, Itetronimo);
+	}
+	
 	public void rotate(int rotation) {
 		this.rotation = rotation;
+		//Roda a peça
+		howItIs();
 	}
-
+	
 	public void howItIs() {
 		switch (rotation) {
 		case (0):

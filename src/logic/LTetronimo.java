@@ -1,6 +1,11 @@
 package logic;
 
-public class LTetronimo {
+public class LTetronimo extends Block {
+	LTetronimo(int x, int y) {
+		super(x, y);
+	
+	}
+
 	int rotation;
 	int[][] Itetronimo = new int[3][4];
 

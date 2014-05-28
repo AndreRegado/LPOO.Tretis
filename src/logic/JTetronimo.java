@@ -1,6 +1,11 @@
 package logic;
 
-public class JTetronimo {
+public class JTetronimo extends Block  {
+	JTetronimo(int x, int y) {
+		super(x, y);
+		
+	}
+
 	int rotation;
 	int[][] Itetronimo = new int[3][3];
 
