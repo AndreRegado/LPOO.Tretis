@@ -10,6 +10,7 @@ public class Game {
 	int speed;
 	static int[][] actualGame = board.getactualGame();
 	static int[][] clearGame;
+	int lineDele;
 
 	static void printBoard() {
 
@@ -25,7 +26,7 @@ public class Game {
 
 	}
 
-	boolean testMove(int newx, int newy) {
+	static boolean testMove(int newx, int newy) {
 		int x = currentBlock.getX();
 		int y = currentBlock.getY();
 
@@ -109,22 +110,66 @@ public class Game {
 		}
 	}
 
+	// check if line is complete
+	boolean CompleteLine(int i) {
+		boolean complete = true;
+		for (int j = 1; j < 11; j++) {
+			if (board.actualGame[i][j] == 0)
+				complete = false;
+		}
+
+		return complete;
+	}
+
+	// check numbers lines are complete
+	int numberCompleteLines() {
+		int number = 0;
+		for (int i = 2; i < numberLin; i++) {
+			if (CompleteLine(i))
+				number += 1;
+		}
+		return number;
+	}
+
+	/*
+	 * // remove lines completes void RemoveLines() {
+	 * 
+	 * }
+	 */
+
+	// Check if you lose
+	boolean exit() {
+		boolean exit = false;
+		for (int j = 1; j < numberCol; j++) {
+			if (board.actualGame[1][j] != 0)
+				exit = true;
+		}
+		return exit;
+	}
+
 	public static void main(String[] args) {
+		int counter = 0;
 		RandomBlock();
-		printBlock();
-		System.out.println();
-		currentBlock.rotate();
-		printBlock();
-		System.out.println();
-		currentBlock.rotate();
-		printBlock();
-		System.out.println();
-		currentBlock.rotate();
-		printBlock();
-		System.out.println();
-		currentBlock.rotate();
-		printBlock();
-		System.out.println();
+		while (counter < 3000) {
+
+			if (testMove(currentBlock.getX() + 1, currentBlock.getY())) {
+				currentBlock.setX(currentBlock.getX() + 1);
+				putBlock();
+				printBoard();
+			} else {
+				clearGame = actualGame;
+				printBoard();
+			}
+
+			sleep(1000);
+			counter++;
+		}
+
+	}
+
+	private static void sleep(int i) {
+		// TODO Auto-generated method stub
+
 	}
 
 }
