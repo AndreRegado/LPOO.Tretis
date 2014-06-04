@@ -47,6 +47,9 @@ public class Game {
 		return true;
 	}
 
+	/*
+	 * static void rotateBlock(){ currentBlock }
+	 */
 	static void putBlock() {
 		int x = currentBlock.getX();
 		int y = currentBlock.getY();
@@ -60,7 +63,7 @@ public class Game {
 		for (int i = x; i < x + lin; i++) {
 			for (int j = y; j < y + col; j++) {
 				if (actualGame[i][j] == 0 && currentBlock.getBlock()[a][b] != 0)
-					actualGame[i][j] = currentBlock.block[a][b];
+					actualGame[i][j] = currentBlock.getBlock()[a][b];
 				b++;
 			}
 			b = 0;
@@ -108,9 +111,20 @@ public class Game {
 
 	public static void main(String[] args) {
 		RandomBlock();
-
-		putBlock();
-		printBoard();
+		printBlock();
+		System.out.println();
+		currentBlock.rotate();
+		printBlock();
+		System.out.println();
+		currentBlock.rotate();
+		printBlock();
+		System.out.println();
+		currentBlock.rotate();
+		printBlock();
+		System.out.println();
+		currentBlock.rotate();
+		printBlock();
+		System.out.println();
 	}
 
 }

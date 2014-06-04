@@ -1,16 +1,23 @@
 package logic;
 
-public class ZTetronimo extends Block {
+public class ZTetronimo implements Block {
+	int x;
+	int y;
+
 	int rotation = 0;
-	static int[][] Ztetronimo = new int[][] { { 0, 0, 0 }, { 0, 6, 0 },
-			{ 6, 6, 6 }, };
+	static int[][] Ztetronimo = new int[][] {
+
+	{ 0, 0, 0 }, { 7, 7, 0 }, { 0, 7, 7 }, };
 
 	ZTetronimo(int x, int y) {
-		super(x, y, Ztetronimo);
+		this.x = 2;
+		this.y = 2;
 	}
 
-	public void rotate(int rotation) {
-		this.rotation = rotation;
+	public void rotate() {
+		this.rotation += 1;
+		if (rotation == 4)
+			rotation = 0;
 		howItIs();
 	}
 
@@ -38,5 +45,30 @@ public class ZTetronimo extends Block {
 			break;
 
 		}
+	}
+
+	@Override
+	public int[][] getBlock() {
+		return Ztetronimo;
+	}
+
+	@Override
+	public int getX() {
+		return x;
+	}
+
+	@Override
+	public int getY() {
+		return y;
+	}
+
+	@Override
+	public void setX(int value) {
+		this.x = value;
+	}
+
+	@Override
+	public void setY(int value) {
+		this.y = value;
 	}
 }
