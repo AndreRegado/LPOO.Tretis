@@ -11,6 +11,9 @@ public class Block {
 		this.block = block;
 	}
 
+	int [][] getBlock(){
+		return block;
+	}
 	int getX() {
 		return x;
 	}
